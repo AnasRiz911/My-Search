@@ -14,10 +14,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v3  # <-- Reverted to v3
+      - name: Deploy to FTP server
+        uses: ncipollo/ftp-action@v1.0.0  # <-- Use this alternative action
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /htdocs/
+          remote-path: /htdocs/
