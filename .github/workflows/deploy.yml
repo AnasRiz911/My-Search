@@ -12,10 +12,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3 # GitHub Action: Checkout @v3
+        with:
+          ref: 'v3.0.0'  # <-- Specify the exact version if needed
 
       - name: Deploy to FTP server
-        uses: ncipollo/ftp-action@v1.0.0  # <-- Use this alternative action
+        uses: ncipollo/ftp-action@v1.0.0  # <-- Use commit hash if this doesn't work
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
