@@ -12,14 +12,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3 # GitHub Action: Checkout @v3
-        with:
-          ref: 'v3.0.0'  # <-- Specify the exact version if needed
+        uses: actions/checkout@v3
 
-      - name: Deploy to FTP server
-        uses: ncipollo/ftp-action@v1.0.0  # <-- Use commit hash if this doesn't work
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          remote-path: /htdocs/
+          server-dir: /htdocs/
