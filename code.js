@@ -85,10 +85,11 @@ const bgSelector = document.getElementById('bgSelector');
 const storedTheme = localStorage.getItem('selectedTheme');
 
 const themes = {
+  "sunset": "linear-gradient(to right, #f857a6, #ff5858)",
   "default": "radial-gradient(circle at top left, #1f1c2c, #928dab)",
   "blue-pink": "linear-gradient(to right, #2193b0, #6dd5ed)",
   "forest": "linear-gradient(to right, #1D976C, #93F9B9)",
-  "sunset": "linear-gradient(to right, #f857a6, #ff5858)",
+
 };
 
 // Apply stored theme on load
