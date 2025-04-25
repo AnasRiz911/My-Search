@@ -348,3 +348,13 @@ footer .icon:hover {
     margin-top: 5px;
   }
 }
+@media (max-width: 600px) {
+  .top-bar {
+    display: none;
+  }
+
+  .content {
+    padding-top: 0; /* No need to offset if top-bar is hidden */
+  }
+}
+
