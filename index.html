@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="top-bar">
+        <div id="liveClock"></div>
+        <select id="bgSelector">
+        <option value="sunset" selected>Sunset</option>
+          <option value="default">Grey</option>
+          <option value="blue-pink">Blue → Pink</option>
+          <option value="forest">Forest Green</option>
+        
+        </select>
+      </div>
+      
   <div class="container">
     <header>
       <div class="logo">MySearch</div>
@@ -51,13 +63,17 @@
           <a href="https://www.facebook.com/" class="icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://web.whatsapp.com/" class="icon whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           <a href="https://github.com" class="icon github" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://reddit.com" class="icon reddit" title="Reddit"><i class="fab fa-reddit"></i></a><a href="https://instagram.com" class="icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://reddit.com" class="icon reddit" title="Reddit"><i class="fab fa-reddit"></i></a>
+          <a href="https://instagram.com" class="icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://x.com" class="icon twitter" title="Twitter (X)"><i class="fab fa-x-twitter"></i></a>
         </div>
         <!-- Credit Section -->
-        <p style="margin-top: 50px; font-size: 14px; color: #aaa;">This site is made with ❤️ by <strong>Anas Rizwan</strong></p>
+        <p style="margin-top: 50px; font-size: 14px; color: #ffffff;">This site is made with ❤️ by <strong>Anas Rizwan</strong></p>
       </footer>
   </div>
-  <script src="code.js"></script>
+
+  <!-- Cursor Follower -->
+  <div class="cursor-follower"></div>
+ <script src="code.js"></script>
 </body>
 </html>

@@ -1,296 +1,350 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at top left, #1f1c2c, #928dab);
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-  
-  .container {
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
-  }
-  
-  .logo {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 40px;
-    color: #ffffff;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);    color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.top-bar {
+position: fixed;
+top: 10px;
+left: 10px;
+right: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+z-index: 9999;
+padding: 10px 20px;
+}
+
+#liveClock {
+font-size: 18px;
+font-weight: 600;
+color: #fbfcf8;
+background: rgba(0, 0, 0, 0.4);
+padding: 6px 12px;
+border-radius: 8px;
+backdrop-filter: blur(6px);
+}
+
+#bgSelector {
+padding: 8px 12px;
+border-radius: 20px;
+border: none;
+font-size: 14px;
+cursor: pointer;
+background: rgba(255, 255, 255, 0.8);
+color: #333;
+}
+.cursor-follower {
+position: fixed;
+top: 0;
+left: 0;
+width: 18px;
+height: 18px;
+background: rgba(255, 255, 255, 0.6);
+border: 2px solid #00c6ff;
+border-radius: 50%;
+pointer-events: none;
+z-index: 9999;
+transform: translate(-50%, -50%);
+transition: transform 0.1s ease;
+}
+.layout-switcher {
+  text-align: center;
+  margin: 40px auto;
+  color: #fbfcf8;
+}
+
+.layout-switcher select {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 40px;
+  padding: 6px 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.search-bar select {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px;
+  outline: none;
+  appearance: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: white;
+  padding: 10px 12px;
+  font-size: 16px;
+  outline: none;
+}
+ 
+
+.search-bar input::placeholder {
+  color: #f1f1f1;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #00c6ff;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #008ecf;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: #222;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  max-width: 90%;
+  width: 400px;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #fff;
+}
+
+.engine-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.engine-buttons button {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.engine-buttons button:hover {
+  background: #00c6ff;
+  color: #000;
+  transform: scale(1.05);
+}
+.custom-socials {
+  margin-top: 60px;
+  text-align: center;
+  color: #fff;
+}
+
+.custom-socials h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+#customSocialForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
+
+#customSocialForm input,
+#customSocialForm button {
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+#customSocialForm input {
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+}
+
+#customSocialForm button {
+  background-color: #00c6ff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#customSocialForm button:hover {
+  background-color: #008ecf;
+}
+
+.engine-buttons .chatgpt:hover {
+  background: #10a37f;
+  color: #fbfcf8;
+}
+
+
+footer {
+  margin-top: 50px;
+}
+
+footer p {
+  margin-bottom: 16px;
+  font-weight: 600;
+
+  color: #fbfcf8;
+  font-size: 16px;
+}
+
+footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+footer .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+}
+
+footer .icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.engine-buttons .gemini:hover { background: #4285f4; color: white; }
+.engine-buttons .copilot:hover { background: #0078d4; color: white; }
+
+
+/* Messaging & Social Hover Colors */
+.icon.mastodon:hover { background: #6364ff; }
+.icon.telegram:hover { background: #0088cc; }
+.icon.signal:hover { background: #3a76f0; }
+.icon.facebook:hover { background: #3b5998; }
+.icon.whatsapp:hover { background: #25d366; }
+.icon.element:hover { background: #0dbd8b; }
+.icon.matrix:hover { background: #000; }
+.icon.github:hover { background: #333; }
+.icon.reddit:hover { background: #ff4500; }
+.icon.notion:hover { background: #000; }
+.icon.figma:hover { background: #a259ff; }
+.icon.twitter:hover{ background-color:#181919;}
+.icon.instagram:hover{ background: linear-gradient(45deg, 
+              #405DE6, #5851DB, #833AB4, #C13584, 
+              #E1306C, #FD1D1D, #F56040, #F77737, 
+              #FCAF45, #FFDC80);}
+
+
+/* Digital Tools Hover Colors */
+.icon.proton:hover { background: #6d4aff; }
+.icon.gmail:hover { background: #db4437; }
+.icon.photos:hover { background: #fbbc05; }
+.icon.rewards:hover { background: #0078d4; }
+
+
+
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
   .search-bar {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 40px;
-    padding: 6px 8px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto 40px;
-  }
-  
-  .search-bar select {
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 15px;
-    padding: 10px;
-    outline: none;
-    appearance: none;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  .search-bar input {
-    flex: 1;
-    border: none;
-    background: transparent;
-    color: white;
-    padding: 10px 12px;
-    font-size: 16px;
-    outline: none;
-  }
-   
-  
-  .search-bar input::placeholder {
-    color: #aaa;
-  }
-  
-  .search-bar button {
-    padding: 10px 20px;
-    background-color: #00c6ff;
-    border: none;
-    border-radius: 30px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .search-bar button:hover {
-    background-color: #008ecf;
-  }
-  
-  footer {
-    margin-top: 50px;
-  }
-  
-  footer p {
-    margin-bottom: 16px;
-    font-weight: 600;
-    color: #ddd;
-    font-size: 16px;
-  }
-  
-  footer .socials {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-  
-  footer .icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 20px;
-    background: rgba(255, 255, 255, 0.08);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 0 transparent;
-  }
-  
-  footer .icon:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-  }
-  
-  /* Messaging & Social Hover Colors */
-  .icon.mastodon:hover { background: #6364ff; }
-  .icon.telegram:hover { background: #0088cc; }
-  .icon.signal:hover { background: #3a76f0; }
-  .icon.facebook:hover { background: #3b5998; }
-  .icon.whatsapp:hover { background: #25d366; }
-  .icon.element:hover { background: #0dbd8b; }
-  .icon.matrix:hover { background: #000; }
-  
-  /* Digital Tools Hover Colors */
-  .icon.proton:hover { background: #6d4aff; }
-  .icon.gmail:hover { background: #db4437; }
-  .icon.photos:hover { background: #fbbc05; }
-  .icon.rewards:hover { background: #0078d4; }
-  
-  .modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  
-  .modal.show {
-    display: flex;
-  }
-  
-  .modal-content {
-    background: #222;
-    padding: 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-    max-width: 90%;
-    width: 400px;
-    animation: fadeIn 0.3s ease;
-  }
-  
-  .modal-content h2 {
-    margin-bottom: 20px;
-    font-size: 22px;
-    color: #fff;
-  }
-  
-  .engine-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-  
-  .engine-buttons button {
-    background: #444;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 30px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .engine-buttons button:hover {
-    background: #00c6ff;
-    color: #000;
-    transform: scale(1.05);
-  }
-  .custom-socials {
-    margin-top: 60px;
-    text-align: center;
-    color: #fff;
-  }
-  
-  .custom-socials h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-  
-  #customSocialForm {
-    display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 400px;
-    margin: 0 auto 20px;
-  }
-  
-  #customSocialForm input,
-  #customSocialForm button {
     padding: 10px;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    font-size: 14px;
   }
-  
-  #customSocialForm input {
-    background: rgba(255, 255, 255, 0.07);
-    color: white;
+
+  .search-bar select,
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
   }
-  
-  #customSocialForm button {
-    background-color: #00c6ff;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
+
+  .search-bar button {
+    margin-top: 5px;
   }
-  
-  #customSocialForm button:hover {
-    background-color: #008ecf;
-  }
-  .layout-switcher {
-    text-align: center;
-    margin: 40px auto;
-    color: #ccc;
-  }
-  
-  .layout-switcher select {
-    padding: 8px 12px;
-    border-radius: 20px;
-    border: none;
-    font-size: 14px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  .engine-buttons .chatgpt:hover {
-    background: #10a37f;
-    color: white;
-  }
-  
-  .engine-buttons .gemini:hover { background: #4285f4; color: white; }
-  .engine-buttons .copilot:hover { background: #0078d4; color: white; }
-  
-  
-  
-  .icon.github:hover { background: #333; }
-  .icon.reddit:hover { background: #ff4500; }
-  .icon.notion:hover { background: #000; }
-  .icon.figma:hover { background: #a259ff; }
-  
-  
-  
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  
-  
-  /* Responsive */
-  @media (max-width: 600px) {
-    .search-bar {
-      flex-direction: column;
-      gap: 10px;
-      padding: 10px;
-    }
-  
-    .search-bar select,
-    .search-bar input,
-    .search-bar button {
-      width: 100%;
-    }
-  
-    .search-bar button {
-      margin-top: 5px;
-    }
-  }
-  
+}
