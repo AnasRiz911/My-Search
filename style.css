@@ -352,7 +352,9 @@ footer .icon:hover {
   .top-bar {
     display: none;
   }
-
+  .cursor-follower{
+    display: none;
+  }
   .content {
     padding-top: 0; /* No need to offset if top-bar is hidden */
   }
