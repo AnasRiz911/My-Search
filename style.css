@@ -1,4 +1,4 @@
-* {
+  * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -359,4 +359,3 @@ footer .icon:hover {
     padding-top: 0; /* No need to offset if top-bar is hidden */
   }
 }
-

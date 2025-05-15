@@ -1,5 +1,4 @@
-
-    // Search engine modal logic
+      // Search engine modal logic
     const form = document.getElementById('searchForm');
     const input = document.getElementById('searchInput');
     const modal = document.getElementById('engineModal');
@@ -85,12 +84,37 @@ const bgSelector = document.getElementById('bgSelector');
 const storedTheme = localStorage.getItem('selectedTheme');
 
 const themes = {
-  "sunset": "linear-gradient(to right, #f857a6, #ff5858)",
-  "default": "radial-gradient(circle at top left, #1f1c2c, #928dab)",
-  "blue-pink": "linear-gradient(to right, #2193b0, #6dd5ed)",
-  "forest": "linear-gradient(to right, #1D976C, #93F9B9)",
-
+  sunset: 'linear-gradient(to right, #ff7e5f, #feb47b)',
+  default: '#888888',
+  'blue-pink': 'linear-gradient(to right, #2193b0, #ff6e7f)',
+  forest: 'linear-gradient(to right, #005C4B, #0f9b0f)',
+  dark: '#1a1a1a',
+  pastel: 'linear-gradient(to right, #a18cd1, #fbc2eb)',
+  midnight: 'linear-gradient(to right, #232526, #414345)',
+  aqua: 'linear-gradient(to right, #13547a, #80d0c7)',
+  ocean: 'linear-gradient(to right, #2b5876, #4e4376)',
+  lava: 'linear-gradient(to right, #ff4e50, #f9d423)',
+  peach: 'linear-gradient(to right, #ed4264, #ffedbc)',
+  candy: 'linear-gradient(to right, #ff9a9e, #fad0c4)',
+  ice: 'linear-gradient(to right, #83a4d4, #b6fbff)',
+  berry: 'linear-gradient(to right, #8e2de2, #4a00e0)',
+  neon: 'linear-gradient(to right, #00c6ff, #0072ff)',
+  vintage: 'linear-gradient(to right, #e0c3fc, #8ec5fc)'
 };
+
+
+    bgSelector.addEventListener('change', () => {
+    const selected = bgSelector.value;
+    document.body.style.background = themes[selected] || '#000';
+  });
+
+
+  // Apply saved theme on load
+const savedTheme = localStorage.getItem('selectedTheme');
+if (savedTheme && themes[savedTheme]) {
+  bgSelector.value = savedTheme;
+  document.body.style.background = themes[savedTheme];
+}
 
 // Apply stored theme on load
 if (storedTheme && themes[storedTheme]) {
