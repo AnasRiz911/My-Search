@@ -13,3 +13,6 @@ Got ideas, feedback, or requests? We'd love to hear from you — reach out to us
 -Added Theme toggle with 4 theme Options
 
 -Added Mouse Follower on Desktop View
+
+# Update (05/15/2025)
+-Added New themes, Now total 16 themes.
