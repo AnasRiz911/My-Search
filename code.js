@@ -88,7 +88,7 @@ const themes = {
   default: '#888888',
   'blue-pink': 'linear-gradient(to right, #2193b0, #ff6e7f)',
   forest: 'linear-gradient(to right, #005C4B, #0f9b0f)',
-  dark: '#1a1a1a',
+  dark: '#000000',
   pastel: 'linear-gradient(to right, #a18cd1, #fbc2eb)',
   midnight: 'linear-gradient(to right, #232526, #414345)',
   aqua: 'linear-gradient(to right, #13547a, #80d0c7)',
