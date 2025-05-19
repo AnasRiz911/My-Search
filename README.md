@@ -16,3 +16,6 @@ Got ideas, feedback, or requests? We'd love to hear from you — reach out to us
 
 # Update (05/15/2025)
 -Added New themes, Now total 16 themes.
+
+# Update (05/19/2025)
+-Added New theme, Pitch Black.
